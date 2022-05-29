@@ -1,19 +1,21 @@
 package com.example.after.after.response;
 
-public class UsuarioLoginResponse {
+public class UsuarioBuscaResponse {
 
     public String nomeCompleto;
+    public String idade;
     public String descricao;
     public String fotoPerfil;
     public int numeroSeguidores;
     public int numeroSeguindo;
     public int publicacoes;
 
-    public UsuarioLoginResponse() {
+    public UsuarioBuscaResponse() {
     }
 
-    public UsuarioLoginResponse(String nomeCompleto, String descricao, String fotoPerfil, int numeroSeguidores, int numeroSeguindo, int publicacoes) {
+    public UsuarioBuscaResponse(String nomeCompleto, String idade, String descricao, String fotoPerfil, int numeroSeguidores, int numeroSeguindo, int publicacoes) {
         this.nomeCompleto = nomeCompleto;
+        this.idade = idade;
         this.descricao = descricao;
         this.fotoPerfil = fotoPerfil;
         this.numeroSeguidores = numeroSeguidores;
@@ -27,6 +29,14 @@ public class UsuarioLoginResponse {
 
     public void setNomeCompleto(String nomeCompleto) {
         this.nomeCompleto = nomeCompleto;
+    }
+
+    public String getIdade() {
+        return idade;
+    }
+
+    public void setIdade(String idade) {
+        this.idade = idade;
     }
 
     public String getDescricao() {

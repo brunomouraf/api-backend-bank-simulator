@@ -29,6 +29,32 @@ public class Usuario{
     public String descricao;
     @Column(name = "fotoperfil")
     public String fotoPerfil;
+    @Column(name = "numeroseguidores")
+    public int numeroSeguidores;
+    @Column(name = "numeroseguindo")
+    public int numeroSeguindo;
+    @Column(name = "publicacoes")
+    public int publicacoes;
+
+    public Usuario() {
+    }
+
+    public Usuario(Usuario usuario) {
+        this.id = usuario.id;
+        this.nomeCompleto = usuario.nomeCompleto;
+        this.dataNascimento = usuario.dataNascimento;
+        this.email = usuario.email;
+        this.idade = usuario.idade;
+        this.cidade = usuario.cidade;
+        this.telefone = usuario.telefone;
+        this.sexo = usuario.sexo;
+        this.senha = usuario.senha;
+        this.descricao = usuario.descricao;
+        this.fotoPerfil = usuario.fotoPerfil;
+        this.numeroSeguidores = usuario.numeroSeguidores;
+        this.numeroSeguindo = usuario.numeroSeguindo;
+        this.publicacoes = usuario.publicacoes;
+    }
 
     public Long getId() {
         return id;
@@ -116,5 +142,29 @@ public class Usuario{
 
     public void setFotoPerfil(String fotoPerfil) {
         this.fotoPerfil = fotoPerfil;
+    }
+
+    public int getNumeroSeguidores() {
+        return numeroSeguidores;
+    }
+
+    public void setNumeroSeguidores(int numeroSeguidores) {
+        this.numeroSeguidores = numeroSeguidores;
+    }
+
+    public int getNumeroSeguindo() {
+        return numeroSeguindo;
+    }
+
+    public void setNumeroSeguindo(int numeroSeguindo) {
+        this.numeroSeguindo = numeroSeguindo;
+    }
+
+    public int getPublicacoes() {
+        return publicacoes;
+    }
+
+    public void setPublicacoes(int publicacoes) {
+        this.publicacoes = publicacoes;
     }
 }

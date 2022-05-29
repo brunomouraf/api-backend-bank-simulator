@@ -8,15 +8,17 @@ public class UsuarioCadastroRequest {
     private String email;
     private String senha;
     private String telefone;
+    private String descricao;
 
     public UsuarioCadastroRequest() {
     }
 
-    public UsuarioCadastroRequest(String nomeCompleto, String email, String senha, String telefone) {
+    public UsuarioCadastroRequest(String nomeCompleto, String email, String senha, String telefone, String descricao) {
         this.nomeCompleto = nomeCompleto;
         this.email = email;
         this.senha = senha;
         this.telefone = telefone;
+        this.descricao = descricao;
     }
 
     public String getNomeCompleto() {
@@ -51,12 +53,21 @@ public class UsuarioCadastroRequest {
         this.telefone = telefone;
     }
 
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
     public Usuario saveRequestObject(){
         Usuario usuario = new Usuario();
         usuario.setNomeCompleto(this.nomeCompleto);
         usuario.setEmail(this.email);
         usuario.setSenha(this.senha);
         usuario.setTelefone(this.telefone);
+        usuario.setDescricao(this.descricao);
 
         return usuario;
     }

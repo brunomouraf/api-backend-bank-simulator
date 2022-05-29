@@ -8,9 +8,9 @@ public class UsuarioLoginRequest {
     public UsuarioLoginRequest() {
     }
 
-    public UsuarioLoginRequest(String email, String password) {
+    public UsuarioLoginRequest(String email, String senha) {
         this.email = email;
-        this.senha = password;
+        this.senha = senha;
     }
 
     public String getEmail() {

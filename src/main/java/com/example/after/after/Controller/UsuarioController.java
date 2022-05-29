@@ -2,6 +2,7 @@ package com.example.after.after.Controller;
 
 import com.example.after.after.request.UsuarioCadastroRequest;
 import com.example.after.after.request.UsuarioLoginRequest;
+import com.example.after.after.response.UsuarioBuscaResponse;
 import com.example.after.after.response.UsuarioLoginResponse;
 import com.example.after.after.service.UsuarioService;
 import com.example.after.after.model.Usuario;
@@ -13,6 +14,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:8080")
 @RequestMapping("/after")
@@ -36,8 +40,14 @@ public class UsuarioController {
 
     @ApiOperation(value = "Login usuario")
     @PostMapping("/login")
-    public ResponseEntity<UsuarioLoginResponse> loginClient(@RequestBody @Valid UsuarioLoginRequest usuarioLoginRequest) {
-        System.out.println(usuarioLoginRequest);
+    public ResponseEntity<UsuarioLoginResponse> loginClient( @Valid UsuarioLoginRequest usuarioLoginRequest) {
         return new ResponseEntity<>(usuarioService.loginClient(usuarioLoginRequest), HttpStatus.OK);
+    }
+
+    @ApiOperation(value = "Busca usuario")
+    @PostMapping("/buscar")
+    public ResponseEntity<?> pesquisarUsuario(@Valid String nomeCompleto) {
+        System.out.println(nomeCompleto);
+        return new ResponseEntity<>(usuarioService.pesquisarUsuario(nomeCompleto), HttpStatus.OK);
     }
 }
