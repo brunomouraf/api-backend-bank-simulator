@@ -1,6 +1,7 @@
 package com.example.after.after.Controller;
 
 import com.example.after.after.request.UsuarioCadastroRequest;
+import com.example.after.after.request.UsuarioFotoRequest;
 import com.example.after.after.request.UsuarioLoginRequest;
 import com.example.after.after.response.UsuarioBuscaResponse;
 import com.example.after.after.response.UsuarioLoginResponse;
@@ -49,5 +50,11 @@ public class UsuarioController {
     public ResponseEntity<?> pesquisarUsuario(@Valid String nomeCompleto) {
         System.out.println(nomeCompleto);
         return new ResponseEntity<>(usuarioService.pesquisarUsuario(nomeCompleto), HttpStatus.OK);
+    }
+
+    @ApiOperation(value = "Salvar foto")
+    @PostMapping("/salvar-foto")
+    public ResponseEntity<Usuario> salvarFoto(@Valid UsuarioFotoRequest usuarioFotoRequest) {
+        return new ResponseEntity<>(usuarioService.salvarFotoPerfil(usuarioFotoRequest), HttpStatus.OK);
     }
 }

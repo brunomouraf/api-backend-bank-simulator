@@ -9,7 +9,7 @@ create table usuario(
                        cidade varchar(15),
                        sexo varchar(15),
                        idade varchar(15),
-                       fotoPerfil varchar(100),
+                       fotoPerfil varchar,
                        numeroSeguidores bigint,
                        numeroSeguindo bigint,
                        publicacoes bigint

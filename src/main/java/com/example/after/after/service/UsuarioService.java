@@ -1,6 +1,7 @@
 package com.example.after.after.service;
 
 import com.example.after.after.request.UsuarioCadastroRequest;
+import com.example.after.after.request.UsuarioFotoRequest;
 import com.example.after.after.request.UsuarioLoginRequest;
 import com.example.after.after.response.UsuarioBuscaResponse;
 import com.example.after.after.response.UsuarioLoginResponse;
@@ -50,6 +51,13 @@ public class UsuarioService {
             return usuario ;
         }
         throw new RuntimeException("Usuario não encontrado" + nomeCompleto);
+    }
+
+    public Usuario salvarFotoPerfil(UsuarioFotoRequest usuarioFotoRequest){
+        List<Usuario> usuario = usuarioRepository.findByEmail(usuarioFotoRequest.getEmail());
+        usuario.get(0).setFotoPerfil(usuarioFotoRequest.getFotoPerfil());
+
+        return usuarioRepository.save(usuario.get(0));
     }
 
 }
