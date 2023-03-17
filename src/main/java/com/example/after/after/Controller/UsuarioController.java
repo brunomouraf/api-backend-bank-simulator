@@ -19,9 +19,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:8080")
 @RequestMapping("/after")
-@Api(value = "Usuario")
 @RestController
 public class UsuarioController {
 

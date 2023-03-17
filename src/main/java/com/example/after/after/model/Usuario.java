@@ -3,7 +3,6 @@ package com.example.after.after.model;
 import javax.persistence.*;
 
 @Entity
-
 @Table(name = "usuario")
 public class Usuario{
     @Id

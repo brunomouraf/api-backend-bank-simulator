@@ -11,6 +11,7 @@ public class AfterApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AfterApplication.class, args);
+		System.out.print("Hello Gabriel");
 	}
 
 	@Bean
