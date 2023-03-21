@@ -32,7 +32,8 @@ public class UsuarioController {
 
     @ApiOperation(value = "Cadastro usuario")
     @RequestMapping("/registrar")
-    public ResponseEntity<Usuario> registrarUsuario( @Valid UsuarioCadastroRequest usuarioCadastroRequest){
+    public ResponseEntity<Usuario> registrarUsuario( @Valid @RequestBody UsuarioCadastroRequest usuarioCadastroRequest){
+        System.out.println(usuarioCadastroRequest);
         Usuario usuario = usuarioService.salvarUsuario(usuarioCadastroRequest);
         return new ResponseEntity<>(usuario, HttpStatus.CREATED);
     }
